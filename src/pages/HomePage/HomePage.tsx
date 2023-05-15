@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   PrimaryButton,
   SecondaryButton,
@@ -5,10 +6,14 @@ import {
 import "./HomePage.css";
 
 export const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="container-page flex-center home">
-      <PrimaryButton>Visitas</PrimaryButton>
-      <SecondaryButton>Oradores locales</SecondaryButton>
+      <PrimaryButton onClick={() => navigate("/visits")}>Visitas</PrimaryButton>
+      <SecondaryButton onClick={() => navigate("/speakers")}>
+        Oradores locales
+      </SecondaryButton>
     </section>
   );
 };
