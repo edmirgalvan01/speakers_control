@@ -1,10 +1,14 @@
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from "../../components/Buttons/Buttons";
 import "./HomePage.css";
 
 export const HomePage = () => {
   return (
     <section className="container-page flex-center home">
-      <button className="primary-button">Visitas</button>
-      <button className="secondary-button">Oradores locales</button>
+      <PrimaryButton>Visitas</PrimaryButton>
+      <SecondaryButton>Oradores locales</SecondaryButton>
     </section>
   );
 };

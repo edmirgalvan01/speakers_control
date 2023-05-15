@@ -1,0 +1,18 @@
+.button {
+  height: 45px;
+  width: 150px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+.primary-button {
+  background-color: var(--color-blue);
+  color: #fff;
+}
+.secondary-button {
+  border: 1px solid var(--color-blue);
+  background-color: transparent;
+  color: var(--color-black);
+}
