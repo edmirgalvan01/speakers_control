@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { HomePage } from "./pages/HomePage";
+import { HomePage } from "./pages/HomePage/HomePage";
 import { RegisterOutputPage } from "./pages/RegisterOutputPage";
 import { RegisterSpeakerPage } from "./pages/RegisterSpeakerPage";
 import { RegisterSpeechPage } from "./pages/RegisterSpeechPage";
