@@ -1,0 +1,15 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.field label {
+  font-size: 12px;
+  font-weight: 500;
+}
+.field input {
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid var(--color-blue);
+  padding-left: 10px;
+}
