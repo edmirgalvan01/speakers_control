@@ -3,17 +3,3 @@
   flex-direction: column;
   gap: 20px;
 }
-.visitCard {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 10px;
-}
-.visitCard--item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.divider {
-  border: 1px solid #dcdcdc;
-}
