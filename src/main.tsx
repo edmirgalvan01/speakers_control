@@ -10,7 +10,7 @@ import { RegisterSpeechPage } from "./pages/RegisterSpeechPage";
 import { RegisterVisitPage } from "./pages/RegisterVisitPage";
 import { SpeakerPage } from "./pages/SpeakerPage";
 import { SpeakersPage } from "./pages/SpeakersPage";
-import { VisitsPage } from "./pages/VisitsPage";
+import { VisitsPage } from "./pages/VisitsPage/VisitsPage";
 
 import "./index.css";
 
