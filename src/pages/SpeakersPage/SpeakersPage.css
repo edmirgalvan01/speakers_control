@@ -1,0 +1,16 @@
+.localSpeakersList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.localSpeakerItem {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-blue);
+}
+.localSpeakerItem p {
+  font-weight: 500;
+}
