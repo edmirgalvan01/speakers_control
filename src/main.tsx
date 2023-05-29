@@ -8,7 +8,7 @@ import { RegisterOutputPage } from "./pages/RegisterOutputPage";
 import { RegisterSpeakerPage } from "./pages/RegisterSpeakerPage/RegisterSpeakerPage";
 import { RegisterSpeechPage } from "./pages/RegisterSpeechPage";
 import { RegisterVisitPage } from "./pages/RegisterVisitPage/RegisterVisitPage";
-import { SpeakerPage } from "./pages/SpeakerPage";
+import { SpeakerPage } from "./pages/SpeakerPage/SpeakerPage";
 import { SpeakersPage } from "./pages/SpeakersPage/SpeakersPage";
 import { VisitsPage } from "./pages/VisitsPage/VisitsPage";
 
