@@ -1,0 +1,9 @@
+.localSpeakerItem {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+}
+.localSpeakerItem p {
+  font-weight: 500;
+}
