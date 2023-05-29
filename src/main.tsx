@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { HomePage } from "./pages/HomePage/HomePage";
 import { RegisterOutputPage } from "./pages/RegisterOutputPage";
-import { RegisterSpeakerPage } from "./pages/RegisterSpeakerPage";
+import { RegisterSpeakerPage } from "./pages/RegisterSpeakerPage/RegisterSpeakerPage";
 import { RegisterSpeechPage } from "./pages/RegisterSpeechPage";
 import { RegisterVisitPage } from "./pages/RegisterVisitPage/RegisterVisitPage";
 import { SpeakerPage } from "./pages/SpeakerPage";
