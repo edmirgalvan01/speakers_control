@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { HomePage } from "./pages/HomePage/HomePage";
-import { RegisterOutputPage } from "./pages/RegisterOutputPage";
+import { RegisterOutputPage } from "./pages/RegisterOutputPage/RegisterOutputPage";
 import { RegisterSpeakerPage } from "./pages/RegisterSpeakerPage/RegisterSpeakerPage";
 import { RegisterSpeechPage } from "./pages/RegisterSpeechPage";
 import { RegisterVisitPage } from "./pages/RegisterVisitPage/RegisterVisitPage";
