@@ -27,7 +27,7 @@ export const VisitCard = ({
     <div className="visitCard">
       <div className="visitCard--item">
         <BiMicrophone color="345996" size="20" />
-        <p>{speech}</p>
+        <strong>{speech}</strong>
       </div>
       <div className="visitCard--item">
         <BiUser color="345996" size="20" />
