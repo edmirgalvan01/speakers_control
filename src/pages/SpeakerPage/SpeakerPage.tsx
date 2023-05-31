@@ -49,12 +49,20 @@ export const SpeakerPage = () => {
       <div className="SpeakerSpeechesList">
         <h3>Discursos</h3>
         <ul className="SpeakerSpeechesList">
-          {speeches.map((speech) => (
-            <li className="SpeakerSpeechItem" key={speech.id}>
-              <CardInfoItem type="speech" data={speech.speech_title} />
-              <CardInfoItem type="song" data={speech.speech_song} />
-            </li>
-          ))}
+          {speeches.length > 0 ? (
+            <>
+              {speeches.map((speech) => (
+                <li className="SpeakerSpeechItem" key={speech.id}>
+                  <CardInfoItem type="speech" data={speech.speech_title} />
+                  <CardInfoItem type="song" data={speech.speech_song} />
+                </li>
+              ))}
+            </>
+          ) : (
+            <p>
+              El hermano {speaker?.speaker_name} no tiene discursos asignados.
+            </p>
+          )}
         </ul>
       </div>
     </section>
