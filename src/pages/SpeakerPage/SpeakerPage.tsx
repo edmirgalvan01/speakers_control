@@ -5,15 +5,22 @@ import {
   SecondaryButton,
 } from "../../components/Buttons/Buttons";
 import "./SpeakerPage.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useGetSpeakerById } from "../../hooks/useGetSpeakerById";
+import { useGetSpeechBySpeakerId } from "../../hooks/useGetSpeechBySpeakerId";
 
 export const SpeakerPage = () => {
+  const { id } = useParams();
+  const parsedId = parseInt(id!);
+
   const navigate = useNavigate();
+  const { speaker } = useGetSpeakerById(parsedId);
+  const { speeches } = useGetSpeechBySpeakerId(parsedId);
 
   return (
     <section className="container-page flex-center-column speakerPage">
       <BackButton />
-      <h1 className="title">Edmir Galvan</h1>
+      <h1 className="title">{speaker?.speaker_name}</h1>
       <div className="speakerPage--buttons">
         <PrimaryButton onClick={() => navigate("/register-output")}>
           Nueva salida
@@ -42,14 +49,12 @@ export const SpeakerPage = () => {
       <div className="SpeakerSpeechesList">
         <h3>Discursos</h3>
         <ul className="SpeakerSpeechesList">
-          <li className="SpeakerSpeechItem">
-            <CardInfoItem type="speech" data="Hazte amigo de Jehova" />
-            <CardInfoItem type="song" data="Una oracion ferviente" />
-          </li>
-          <li className="SpeakerSpeechItem">
-            <CardInfoItem type="speech" data="Hazte amigo de Jehova" />
-            <CardInfoItem type="song" data="Una oracion ferviente" />
-          </li>
+          {speeches.map((speech) => (
+            <li className="SpeakerSpeechItem" key={speech.id}>
+              <CardInfoItem type="speech" data={speech.speech_title} />
+              <CardInfoItem type="song" data={speech.speech_song} />
+            </li>
+          ))}
         </ul>
       </div>
     </section>
