@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { insertVisit } from "../services/visits.service";
 import { FetchResponseType } from "../types/response";
-import { useNavigate } from "react-router-dom";
 
 export const useVisit = () => {
   const [visit, setVisit] = useState({

@@ -1,15 +1,20 @@
+import { useGetLocalSpeakers } from "../../hooks/useGetLocalSpeakers";
 import { LocalSpeakerItem } from "../LocalSpeakerItem/LocalSpeakerItem";
+
 import "./LocalSpeakersList.css";
 
 export const LocalSpeakersList = () => {
+  const { speakers } = useGetLocalSpeakers();
+
   return (
     <ul className="localSpeakersList">
-      <LocalSpeakerItem name="Jhonathan Olmos" />
-      <LocalSpeakerItem name="Isaac Gomez" />
-      <LocalSpeakerItem name="Marcos Sanchez" />
-      <LocalSpeakerItem name="Sergio Herrera" />
-      <LocalSpeakerItem name="David Lopez" />
-      <LocalSpeakerItem name="Sirenio Gomez" />
+      {speakers.map((speaker) => (
+        <LocalSpeakerItem
+          key={speaker.id}
+          id={speaker.id!}
+          name={speaker.speaker_name}
+        />
+      ))}
     </ul>
   );
 };

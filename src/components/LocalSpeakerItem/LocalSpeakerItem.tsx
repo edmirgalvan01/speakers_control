@@ -1,16 +1,17 @@
 import { BiUser } from "react-icons/bi";
-import "./LocalSpeakerItem.css";
 import { useNavigate } from "react-router-dom";
+import "./LocalSpeakerItem.css";
 
 interface Props {
   name: string;
+  id: number;
 }
 
-export const LocalSpeakerItem = ({ name }: Props) => {
+export const LocalSpeakerItem = ({ name, id }: Props) => {
   const navigate = useNavigate();
 
   return (
-    <li className="localSpeakerItem" onClick={() => navigate(`/speaker/${1}`)}>
+    <li className="localSpeakerItem" onClick={() => navigate(`/speaker/${id}`)}>
       <BiUser size="20" color="345996" />
       <p>{name}</p>
     </li>
