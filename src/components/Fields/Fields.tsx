@@ -5,16 +5,28 @@ import "./Fields.css";
 interface Props {
   label: string;
   value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type?: string;
 }
 
-export const FieldInput = ({ label, value, type = "text" }: Props) => {
+export const FieldInput = ({
+  label,
+  value,
+  onChange,
+  type = "text",
+}: Props) => {
   const fieldId = useId();
 
   return (
     <div className="field">
       <label htmlFor={fieldId}>{label}</label>
-      <input type={type} value={value} name={fieldId} id={fieldId} />
+      <input
+        type={type}
+        value={value}
+        name={fieldId}
+        id={fieldId}
+        onChange={onChange}
+      />
     </div>
   );
 };

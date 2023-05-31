@@ -3,7 +3,7 @@ import { getVisits } from "../services/visits.service";
 import { Visit } from "../types/visits";
 import { PostgrestError } from "@supabase/supabase-js";
 
-export const useGetVisits = () => {
+export const useVisits = () => {
   const [visits, setVisits] = useState<Array<Visit>>([]);
   const [error, setError] = useState<PostgrestError | null>();
 

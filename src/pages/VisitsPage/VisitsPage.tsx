@@ -2,12 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { PrimaryButton } from "../../components/Buttons/Buttons";
 import { BackButton } from "../../components/BackButton/BackButton";
 import { VisitCard } from "../../components/VisitCard/VisitCard";
-import { useGetVisits } from "../../hooks/useVisits";
+import { useVisits } from "../../hooks/useVisits";
 import "./VisitsPage.css";
 
 export const VisitsPage = () => {
   const navigate = useNavigate();
-  const { visits, error } = useGetVisits();
+  const { visits, error } = useVisits();
 
   return (
     <section className="container-page visitsPage">
