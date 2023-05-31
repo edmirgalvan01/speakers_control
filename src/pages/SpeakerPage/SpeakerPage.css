@@ -6,13 +6,3 @@
   flex-direction: column;
   gap: 10px;
 }
-.SpeakerOutputItem,
-.SpeakerSpeechItem {
-  border-bottom: 1px solid var(--color-blue);
-  padding: 10px;
-}
-.output--item {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}

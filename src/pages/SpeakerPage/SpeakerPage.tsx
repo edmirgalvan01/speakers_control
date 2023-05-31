@@ -1,5 +1,4 @@
 import { SpeakerSpeechesList } from "../../components/SpeakerSpeechesList/SpeakerSpeechesList";
-import { CardInfoItem } from "../../components/CardInfoItem/CardInfoItem";
 import { BackButton } from "../../components/BackButton/BackButton";
 import {
   PrimaryButton,
@@ -8,6 +7,7 @@ import {
 import "./SpeakerPage.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetSpeakerById } from "../../hooks/useGetSpeakerById";
+import { SpeakerOutputsList } from "../../components/SpeakerOutputsList/SpeakerOutputsList";
 
 export const SpeakerPage = () => {
   const navigate = useNavigate();
@@ -29,23 +29,7 @@ export const SpeakerPage = () => {
           Nuevo discurso
         </SecondaryButton>
       </div>
-      <div className="SpeakerOutputsList">
-        <h3>Salidas</h3>
-        <ul>
-          <li className="SpeakerOutputItem">
-            <CardInfoItem type="speech" data="Hazte amigo de Jehova" />
-            <CardInfoItem type="date" data="10/08/23" />
-            <CardInfoItem type="congregation" data="Zaragoza" />
-            <CardInfoItem type="song" data="Una oracion ferviente" />
-          </li>
-          <li className="SpeakerOutputItem">
-            <CardInfoItem type="speech" data="Hazte amigo de Jehova" />
-            <CardInfoItem type="date" data="10/08/23" />
-            <CardInfoItem type="congregation" data="Zaragoza" />
-            <CardInfoItem type="song" data="Una oracion ferviente" />
-          </li>
-        </ul>
-      </div>
+      <SpeakerOutputsList />
       <SpeakerSpeechesList speakerId={parsedId} />
     </section>
   );
