@@ -1,3 +1,4 @@
+import { SpeakerSpeechesList } from "../../components/SpeakerSpeechesList/SpeakerSpeechesList";
 import { CardInfoItem } from "../../components/CardInfoItem/CardInfoItem";
 import { BackButton } from "../../components/BackButton/BackButton";
 import {
@@ -7,15 +8,14 @@ import {
 import "./SpeakerPage.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetSpeakerById } from "../../hooks/useGetSpeakerById";
-import { useGetSpeechBySpeakerId } from "../../hooks/useGetSpeechBySpeakerId";
 
 export const SpeakerPage = () => {
+  const navigate = useNavigate();
+
   const { id } = useParams();
   const parsedId = parseInt(id!);
 
-  const navigate = useNavigate();
   const { speaker } = useGetSpeakerById(parsedId);
-  const { speeches } = useGetSpeechBySpeakerId(parsedId);
 
   return (
     <section className="container-page flex-center-column speakerPage">
@@ -48,22 +48,7 @@ export const SpeakerPage = () => {
       </div>
       <div className="SpeakerSpeechesList">
         <h3>Discursos</h3>
-        <ul className="SpeakerSpeechesList">
-          {speeches.length > 0 ? (
-            <>
-              {speeches.map((speech) => (
-                <li className="SpeakerSpeechItem" key={speech.id}>
-                  <CardInfoItem type="speech" data={speech.speech_title} />
-                  <CardInfoItem type="song" data={speech.speech_song} />
-                </li>
-              ))}
-            </>
-          ) : (
-            <p>
-              El hermano {speaker?.speaker_name} no tiene discursos asignados.
-            </p>
-          )}
-        </ul>
+        <SpeakerSpeechesList speakerId={parsedId} />
       </div>
     </section>
   );
