@@ -46,10 +46,7 @@ export const SpeakerPage = () => {
           </li>
         </ul>
       </div>
-      <div className="SpeakerSpeechesList">
-        <h3>Discursos</h3>
-        <SpeakerSpeechesList speakerId={parsedId} />
-      </div>
+      <SpeakerSpeechesList speakerId={parsedId} />
     </section>
   );
 };

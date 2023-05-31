@@ -1,5 +1,5 @@
 import { useGetSpeechBySpeakerId } from "../../hooks/useGetSpeechBySpeakerId";
-import { CardInfoItem } from "../CardInfoItem/CardInfoItem";
+import { SpeakerSpeechItem } from "../SpeakerSpeechItem/SpeakerSpeechItem";
 import "./SpeakerSpeechesList.css";
 
 interface Props {
@@ -10,19 +10,24 @@ export const SpeakerSpeechesList = ({ speakerId }: Props) => {
   const { speeches } = useGetSpeechBySpeakerId(speakerId);
 
   return (
-    <ul className="SpeakerSpeechesList">
-      {speeches.length > 0 ? (
-        <>
-          {speeches.map((speech) => (
-            <li className="SpeakerSpeechItem" key={speech.id}>
-              <CardInfoItem type="speech" data={speech.speech_title} />
-              <CardInfoItem type="song" data={speech.speech_song} />
-            </li>
-          ))}
-        </>
-      ) : (
-        <p>El hermano no tiene discursos asignados.</p>
-      )}
-    </ul>
+    <div className="SpeakerSpeechesList">
+      <h3>Discursos</h3>
+      <ul className="SpeakerSpeechesList">
+        {speeches.length > 0 ? (
+          <>
+            {speeches.map((speech) => (
+              <SpeakerSpeechItem
+                key={speech.id}
+                id={speech.id}
+                title={speech.speech_title}
+                song={speech.speech_song}
+              />
+            ))}
+          </>
+        ) : (
+          <p>El hermano no tiene discursos asignados.</p>
+        )}
+      </ul>
+    </div>
   );
 };
