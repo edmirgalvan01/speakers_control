@@ -30,3 +30,34 @@ export const FieldInput = ({
     </div>
   );
 };
+
+interface SelectProps {
+  type?: string;
+  label: string;
+  defaultText: string;
+  options?: Array<{ label: string; value: string | number }>;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+export const FieldSelect = ({
+  label,
+  options,
+  defaultText,
+  onChange,
+}: SelectProps) => {
+  const fieldId = useId();
+
+  return (
+    <div className="field">
+      <label htmlFor={fieldId}>{label}</label>
+      <select name={fieldId} id={fieldId} onChange={onChange}>
+        <option value="">{defaultText}</option>
+        {options?.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};

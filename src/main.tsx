@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: "/register-output",
+    path: "/register-output/:speakerId",
     element: <RegisterOutputPage />,
   },
   {
