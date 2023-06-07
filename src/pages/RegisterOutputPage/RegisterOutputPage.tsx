@@ -4,43 +4,20 @@ import { FieldInput, FieldSelect } from "../../components/Fields/Fields";
 import { getSpeechBySpeakerId } from "../../services/speeches.service";
 import { BackButton } from "../../components/BackButton/BackButton";
 import { PrimaryButton } from "../../components/Buttons/Buttons";
-import { OutputType } from "../../types/outputs";
 import { useParams } from "react-router-dom";
+import { useInsertOutput } from "../../hooks/useInsertOutput";
 import "./RegisterOutputPage.css";
-import { insertNewOutput } from "../../services/outputs.service";
 
 export const RegisterOutputPage = () => {
-  const [output, setOutput] = useState<OutputType>({
-    speech_id: 0,
-    speaker_id: 0,
-    congregation: "",
-    output_date: "",
-  });
-
   const [speeches, setSpeeches] = useState<
     Array<{ label: string; value: string | number }>
   >([]);
 
   const { speakerId } = useParams();
 
-  const handleChange = (property: string, value: string) => {
-    console.log(value);
-
-    setOutput({
-      ...output,
-      [property]: value,
-    });
-  };
-
-  const handleSubmit = async (event: React.SyntheticEvent) => {
-    event.preventDefault();
-    const error = await insertNewOutput({
-      ...output,
-      speaker_id: parseInt(speakerId!),
-    });
-
-    console.log(error);
-  };
+  const { output, handleChange, handleSubmit } = useInsertOutput(
+    parseInt(speakerId!)
+  );
 
   useEffect(() => {
     getSpeechBySpeakerId(parseInt(speakerId!)).then(({ data, error }) => {
