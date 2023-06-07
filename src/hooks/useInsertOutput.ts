@@ -11,8 +11,6 @@ export const useInsertOutput = (speakerId: number) => {
   });
 
   const handleChange = (property: string, value: string) => {
-    console.log(value);
-
     setOutput({
       ...output,
       [property]: value,
