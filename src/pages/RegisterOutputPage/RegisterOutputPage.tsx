@@ -7,6 +7,7 @@ import { PrimaryButton } from "../../components/Buttons/Buttons";
 import { OutputType } from "../../types/outputs";
 import { useParams } from "react-router-dom";
 import "./RegisterOutputPage.css";
+import { insertNewOutput } from "../../services/outputs.service";
 
 export const RegisterOutputPage = () => {
   const [output, setOutput] = useState<OutputType>({
@@ -31,12 +32,14 @@ export const RegisterOutputPage = () => {
     });
   };
 
-  const handleSubmit = (event: React.SyntheticEvent) => {
+  const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-    console.log({
+    const error = await insertNewOutput({
       ...output,
       speaker_id: parseInt(speakerId!),
     });
+
+    console.log(error);
   };
 
   useEffect(() => {
