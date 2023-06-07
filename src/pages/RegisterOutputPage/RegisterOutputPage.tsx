@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { useState, useEffect } from "react";
 import { FieldInput, FieldSelect } from "../../components/Fields/Fields";
-import { getSpeechBySpeakerId } from "../../services/speeches.service";
+import { useGetSpechesOptions } from "../../hooks/useGetSpechesOptions";
 import { BackButton } from "../../components/BackButton/BackButton";
 import { PrimaryButton } from "../../components/Buttons/Buttons";
 import { useParams } from "react-router-dom";
@@ -9,30 +8,12 @@ import { useInsertOutput } from "../../hooks/useInsertOutput";
 import "./RegisterOutputPage.css";
 
 export const RegisterOutputPage = () => {
-  const [speeches, setSpeeches] = useState<
-    Array<{ label: string; value: string | number }>
-  >([]);
-
   const { speakerId } = useParams();
 
   const { output, handleChange, handleSubmit } = useInsertOutput(
     parseInt(speakerId!)
   );
-
-  useEffect(() => {
-    getSpeechBySpeakerId(parseInt(speakerId!)).then(({ data, error }) => {
-      if (!error) {
-        const parsedSpeeches = data?.map((speech) => {
-          return {
-            label: speech.speech_title,
-            value: speech.id,
-          };
-        });
-
-        setSpeeches(parsedSpeeches!);
-      }
-    });
-  }, [speakerId]);
+  const { speeches } = useGetSpechesOptions(parseInt(speakerId!));
 
   return (
     <section className="registerOutputPage container-page flex-center-column">
