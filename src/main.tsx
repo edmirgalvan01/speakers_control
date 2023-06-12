@@ -13,6 +13,7 @@ import { SpeakersPage } from "./pages/SpeakersPage/SpeakersPage";
 import { VisitsPage } from "./pages/VisitsPage/VisitsPage";
 
 import "./index.css";
+import { EditVisitPage } from "./pages/EditVisitPage/EditVisitPage";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/visits",
     element: <VisitsPage />,
+  },
+  {
+    path: "/edit-visit/:visitId",
+    element: <EditVisitPage />,
   },
 ]);
 

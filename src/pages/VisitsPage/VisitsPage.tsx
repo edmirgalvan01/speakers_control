@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useNavigate } from "react-router-dom";
 import { PrimaryButton } from "../../components/Buttons/Buttons";
 import { BackButton } from "../../components/BackButton/BackButton";
@@ -23,6 +24,7 @@ export const VisitsPage = () => {
           visits.map((visit) => (
             <VisitCard
               key={visit.id}
+              id={visit.id!}
               speech={visit.speech_title}
               speaker={visit.speaker_name}
               date={visit.visit_date}

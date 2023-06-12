@@ -1,22 +1,25 @@
-import {
-  BiMicrophone,
-  BiUser,
-  BiCalendar,
-  BiHome,
-  BiMusic,
-} from "react-icons/bi";
-
-import "./VisitCard.css";
+import { BiMicrophone, BiUser, BiCalendar, BiHome } from "react-icons/bi";
 import { PrimaryButton, SecondaryButton } from "../Buttons/Buttons";
+import { useNavigate } from "react-router-dom";
+import "./VisitCard.css";
 
 interface Props {
   speech: string;
   speaker: string;
   date: string;
   congregation: string;
+  id: number;
 }
 
-export const VisitCard = ({ speech, speaker, date, congregation }: Props) => {
+export const VisitCard = ({
+  speech,
+  speaker,
+  date,
+  congregation,
+  id,
+}: Props) => {
+  const navigate = useNavigate();
+
   return (
     <div className="visitCard">
       <div className="visitCard--item">
@@ -36,7 +39,9 @@ export const VisitCard = ({ speech, speaker, date, congregation }: Props) => {
         <p>{congregation}</p>
       </div>
       <div className="visitCard--buttons">
-        <PrimaryButton>Editar</PrimaryButton>
+        <PrimaryButton onClick={() => navigate(`/edit-visit/${id}`)}>
+          Editar
+        </PrimaryButton>
         <SecondaryButton>Eliminar</SecondaryButton>
       </div>
       <div className="divider"></div>
