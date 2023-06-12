@@ -20,7 +20,6 @@ export const SpeakerSpeechesList = ({ speakerId }: Props) => {
                 key={speech.id}
                 id={speech.id}
                 title={speech.speech_title}
-                song={speech.speech_song}
               />
             ))}
           </>

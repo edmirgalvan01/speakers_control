@@ -14,13 +14,19 @@ export const SpeakerOutputsList = ({ speakerId }: Props) => {
     <div className="SpeakerOutputsList">
       <h3>Salidas</h3>
       <ul>
-        {outputs.map((output) => (
-          <SpeakerOutputItem
-            key={output.id}
-            date={output.output_date}
-            congregation={output.congregation}
-          />
-        ))}
+        {outputs.length > 0 ? (
+          <>
+            {outputs.map((output) => (
+              <SpeakerOutputItem
+                key={output.id}
+                date={output.output_date}
+                congregation={output.congregation}
+              />
+            ))}
+          </>
+        ) : (
+          <p>El hermano no ha tenido salidas</p>
+        )}
       </ul>
     </div>
   );
