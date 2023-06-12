@@ -15,3 +15,8 @@ export const getVisitById = async (id: number) => {
   const { data, error } = await supabase.from("visits").select().eq("id", id);
   return { data, error };
 };
+
+export const updateVisit = async (id: number, visit: Visit) => {
+  const { error } = await supabase.from("visits").update(visit).eq("id", id);
+  return { error };
+};
