@@ -16,6 +16,7 @@ export const SpeakerOutputsList = ({ speakerId }: Props) => {
       <ul>
         {outputs.map((output) => (
           <SpeakerOutputItem
+            key={output.id}
             date={output.output_date}
             congregation={output.congregation}
           />
