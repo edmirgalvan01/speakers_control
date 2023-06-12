@@ -27,7 +27,6 @@ export const VisitsPage = () => {
               speaker={visit.speaker_name}
               date={visit.visit_date}
               congregation={visit.speaker_congregation}
-              song={visit.speech_song}
             />
           ))
         )}

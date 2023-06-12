@@ -13,16 +13,9 @@ interface Props {
   speaker: string;
   date: string;
   congregation: string;
-  song: string;
 }
 
-export const VisitCard = ({
-  speech,
-  speaker,
-  date,
-  congregation,
-  song,
-}: Props) => {
+export const VisitCard = ({ speech, speaker, date, congregation }: Props) => {
   return (
     <div className="visitCard">
       <div className="visitCard--item">
@@ -40,10 +33,6 @@ export const VisitCard = ({
       <div className="visitCard--item">
         <BiHome color="345996" size="20" />
         <p>{congregation}</p>
-      </div>
-      <div className="visitCard--item">
-        <BiMusic color="345996" size="20" />
-        <p>{song}</p>
       </div>
       <div className="divider"></div>
     </div>
