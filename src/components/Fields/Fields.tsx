@@ -3,8 +3,8 @@ import { useId } from "react";
 import "./Fields.css";
 
 interface Props {
-  label: string;
-  value: string;
+  label?: string;
+  value?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type?: string;
 }

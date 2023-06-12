@@ -1,13 +1,21 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import { useParams } from "react-router-dom";
 import { BackButton } from "../../components/BackButton/BackButton";
 import { PrimaryButton } from "../../components/Buttons/Buttons";
 import { FieldInput } from "../../components/Fields/Fields";
+import { useGetVisitById } from "../../hooks/useGetVisitById";
 
 export const EditVisitPage = () => {
-  // TODO: getVisitById
+  const { visitId } = useParams();
+  const { visit } = useGetVisitById(parseInt(visitId!));
 
-  const handleChange = (property: string, value: string) => {};
+  const handleChange = (property: string, value: string) => {
+    console.log(property, value);
+  };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    console.log(e);
+  };
 
   return (
     <div className="container-page flex-center-column registerVisitPage">
@@ -20,28 +28,28 @@ export const EditVisitPage = () => {
         <FieldInput
           onChange={(e) => handleChange("date", e.target.value)}
           label="Fecha de visita"
-          value=""
+          value={visit?.visit_date}
           type="date"
         />
         <FieldInput
           onChange={(e) => handleChange("speaker", e.target.value)}
           label="Nombre del visitante"
-          value=""
+          value={visit?.speaker_name}
         />
         <FieldInput
           onChange={(e) => handleChange("congregation", e.target.value)}
           label="Congregación"
-          value=""
+          value={visit?.speaker_congregation}
         />
         <FieldInput
           onChange={(e) => handleChange("speech", e.target.value)}
           label="Titulo del discurso"
-          value=""
+          value={visit?.speech_title}
         />
         <FieldInput
           onChange={(e) => handleChange("song", e.target.value)}
           label="Cántico"
-          value=""
+          value={visit?.speech_song}
         />
         <PrimaryButton width="full">Guardar</PrimaryButton>
       </form>

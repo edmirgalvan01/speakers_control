@@ -10,3 +10,8 @@ export const insertVisit = async (visit: Visit) => {
   const { error } = await supabase.from("visits").insert(visit);
   return { error };
 };
+
+export const getVisitById = async (id: number) => {
+  const { data, error } = await supabase.from("visits").select().eq("id", id);
+  return { data, error };
+};
