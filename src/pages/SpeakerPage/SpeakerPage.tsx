@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { SpeakerSpeechesList } from "../../components/SpeakerSpeechesList/SpeakerSpeechesList";
 import { BackButton } from "../../components/BackButton/BackButton";
 import {
@@ -29,7 +30,7 @@ export const SpeakerPage = () => {
           Nuevo discurso
         </SecondaryButton>
       </div>
-      <SpeakerOutputsList />
+      <SpeakerOutputsList speakerId={parsedId} />
       <SpeakerSpeechesList speakerId={parsedId} />
     </section>
   );

@@ -1,7 +1,14 @@
+import { useGetOutputsBySpeakerId } from "../../hooks/useGetOutputsBySpeakerId";
 import { SpeakerOutputItem } from "../SpeakerOutputItem/SpeakerOutputItem";
 import "./SpeakerOutputsList.css";
 
-export const SpeakerOutputsList = () => {
+interface Props {
+  speakerId: number;
+}
+
+export const SpeakerOutputsList = ({ speakerId }: Props) => {
+  const { outputs } = useGetOutputsBySpeakerId(speakerId);
+
   return (
     <div className="SpeakerOutputsList">
       <h3>Salidas</h3>
