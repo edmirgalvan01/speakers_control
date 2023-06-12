@@ -40,7 +40,7 @@ export const RegisterOutputPage = () => {
           value={output.output_date}
           type="date"
         />
-        <PrimaryButton>Guardar</PrimaryButton>
+        <PrimaryButton width="full">Guardar</PrimaryButton>
       </form>
     </section>
   );

@@ -10,7 +10,9 @@ export const RegisterSpeakerPage = () => {
       <h1 className="title">Nuevo orador</h1>
       <form className="registerSpeakersPage--form">
         <FieldInput label="Nombre completo" value="" />
-        <PrimaryButton type="submit">Guardar</PrimaryButton>
+        <PrimaryButton type="submit" width="full">
+          Guardar
+        </PrimaryButton>
       </form>
     </section>
   );

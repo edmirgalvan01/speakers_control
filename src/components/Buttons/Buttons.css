@@ -16,3 +16,6 @@
   background-color: transparent;
   color: var(--color-black);
 }
+.w-100 {
+  width: 100%;
+}

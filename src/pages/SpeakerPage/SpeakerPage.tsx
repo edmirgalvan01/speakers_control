@@ -23,10 +23,14 @@ export const SpeakerPage = () => {
       <BackButton />
       <h1 className="title">{speaker?.speaker_name}</h1>
       <div className="speakerPage--buttons">
-        <PrimaryButton onClick={() => navigate(`/register-output/${parsedId}`)}>
+        <PrimaryButton
+          width="full"
+          onClick={() => navigate(`/register-output/${parsedId}`)}
+        >
           Nueva salida
         </PrimaryButton>
         <SecondaryButton
+          width="full"
           onClick={() => navigate(`/register-speech/${parsedId}`)}
         >
           Nuevo discurso

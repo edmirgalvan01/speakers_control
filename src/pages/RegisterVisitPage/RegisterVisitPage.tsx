@@ -56,7 +56,7 @@ export const RegisterVisitPage = () => {
           label="Cántico"
           value={visit.song}
         />
-        <PrimaryButton>Guardar</PrimaryButton>
+        <PrimaryButton width="full">Guardar</PrimaryButton>
       </form>
       <Toaster richColors position="top-center" />
     </div>

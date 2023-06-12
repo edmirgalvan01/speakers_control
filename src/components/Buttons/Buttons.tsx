@@ -4,13 +4,22 @@ import "./Buttons.css";
 interface Props {
   className?: string;
   children: string;
+  width: "auto" | "full";
   onClick?: MouseEventHandler<HTMLButtonElement>;
   onBlur?: FocusEventHandler<HTMLButtonElement>;
 }
 
-export const Button = ({ children, className, onClick, onBlur }: Props) => {
+export const Button = ({
+  children,
+  className,
+  width = "auto",
+  onClick,
+  onBlur,
+}: Props) => {
+  const buttonClassName = `button ${className} ${width === "full" && "w-100"}`;
+
   return (
-    <button className={`button ${className}`} onClick={onClick} onBlur={onBlur}>
+    <button className={buttonClassName} onClick={onClick} onBlur={onBlur}>
       {children}
     </button>
   );
@@ -18,7 +27,7 @@ export const Button = ({ children, className, onClick, onBlur }: Props) => {
 
 export const PrimaryButton = ({ ...props }) => {
   return (
-    <Button className="primary-button" {...props}>
+    <Button className="primary-button" {...props} width={props.width}>
       {props.children}
     </Button>
   );
@@ -26,7 +35,7 @@ export const PrimaryButton = ({ ...props }) => {
 
 export const SecondaryButton = ({ ...props }) => {
   return (
-    <Button className="secondary-button" {...props}>
+    <Button className="secondary-button" {...props} width={props.width}>
       {props.children}
     </Button>
   );

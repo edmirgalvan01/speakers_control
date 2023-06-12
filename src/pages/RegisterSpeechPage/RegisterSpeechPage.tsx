@@ -31,7 +31,7 @@ export const RegisterSpeechPage = () => {
           label="Cántico"
           value={speech.speech_song}
         />
-        <PrimaryButton>Guardar</PrimaryButton>
+        <PrimaryButton width="full">Guardar</PrimaryButton>
       </form>
     </section>
   );
