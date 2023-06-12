@@ -11,7 +11,7 @@ export const SpeakersPage = () => {
     <section className="container-page flex-center-column speakersPage">
       <BackButton />
       <h1 className="title">Oradores locales</h1>
-      <PrimaryButton onClick={() => navigate("/register-speaker")}>
+      <PrimaryButton onClick={() => navigate("/register-speaker")} width="full">
         Nuevo orador
       </PrimaryButton>
       <LocalSpeakersList />

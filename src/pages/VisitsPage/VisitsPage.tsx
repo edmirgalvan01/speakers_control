@@ -13,7 +13,7 @@ export const VisitsPage = () => {
     <section className="container-page visitsPage">
       <BackButton />
       <h1 className="title">Visitas</h1>
-      <PrimaryButton onClick={() => navigate("/register-visit")}>
+      <PrimaryButton onClick={() => navigate("/register-visit")} width="full">
         Nueva visita
       </PrimaryButton>
       <section className="table">
