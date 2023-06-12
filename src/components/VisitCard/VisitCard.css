@@ -8,6 +8,10 @@
   display: flex;
   gap: 10px;
 }
+.visitCard--buttons {
+  display: flex;
+  gap: 10px;
+}
 .divider {
   border: 1px solid #dcdcdc;
 }

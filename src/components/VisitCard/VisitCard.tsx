@@ -7,6 +7,7 @@ import {
 } from "react-icons/bi";
 
 import "./VisitCard.css";
+import { PrimaryButton, SecondaryButton } from "../Buttons/Buttons";
 
 interface Props {
   speech: string;
@@ -33,6 +34,10 @@ export const VisitCard = ({ speech, speaker, date, congregation }: Props) => {
       <div className="visitCard--item">
         <BiHome color="345996" size="20" />
         <p>{congregation}</p>
+      </div>
+      <div className="visitCard--buttons">
+        <PrimaryButton>Editar</PrimaryButton>
+        <SecondaryButton>Eliminar</SecondaryButton>
       </div>
       <div className="divider"></div>
     </div>
