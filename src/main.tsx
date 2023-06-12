@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     element: <RegisterSpeakerPage />,
   },
   {
-    path: "/register-speech",
+    path: "/register-speech/:speakerId",
     element: <RegisterSpeechPage />,
   },
   {

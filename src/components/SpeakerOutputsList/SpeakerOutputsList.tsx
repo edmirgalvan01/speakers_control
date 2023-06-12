@@ -8,7 +8,6 @@ interface Props {
 
 export const SpeakerOutputsList = ({ speakerId }: Props) => {
   const { outputs } = useGetOutputsBySpeakerId(speakerId);
-  console.log(outputs);
 
   return (
     <div className="SpeakerOutputsList">

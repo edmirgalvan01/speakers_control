@@ -26,7 +26,9 @@ export const SpeakerPage = () => {
         <PrimaryButton onClick={() => navigate(`/register-output/${parsedId}`)}>
           Nueva salida
         </PrimaryButton>
-        <SecondaryButton onClick={() => navigate("/register-speech")}>
+        <SecondaryButton
+          onClick={() => navigate(`/register-speech/${parsedId}`)}
+        >
           Nuevo discurso
         </SecondaryButton>
       </div>
