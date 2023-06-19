@@ -23,3 +23,12 @@ export const getSpeechById = async (speechId: number) => {
 
   return { data, error };
 };
+
+export const deleteSpeech = async (id: number) => {
+  const { data, error } = await supabase
+    .from("local_speeches")
+    .delete()
+    .eq("id", id);
+
+  return { data, error };
+};
