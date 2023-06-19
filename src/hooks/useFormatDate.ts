@@ -4,6 +4,7 @@ export const useFormatDate = (dateToFormat: string) => {
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "UTC",
   };
 
   const date = new Date(dateToFormat);
