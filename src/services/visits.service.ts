@@ -20,3 +20,8 @@ export const updateVisit = async (id: number, visit: Visit) => {
   const { error } = await supabase.from("visits").update(visit).eq("id", id);
   return { error };
 };
+
+export const deleteVisit = async (id: number) => {
+  const { data, error } = await supabase.from("visits").delete().eq("id", id);
+  return { data, error };
+};

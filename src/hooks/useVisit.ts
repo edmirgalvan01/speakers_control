@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { insertVisit, updateVisit } from "../services/visits.service";
+import {
+  deleteVisit,
+  insertVisit,
+  updateVisit,
+} from "../services/visits.service";
 import { FetchResponseType } from "../types/response";
 
 export const useVisit = () => {
@@ -65,11 +69,22 @@ export const useVisit = () => {
     }
   };
 
+  const removeVisit = async (id: number) => {
+    const response = await deleteVisit(id);
+
+    if (!response.error) {
+      return { success: true, error: null };
+    } else {
+      return { success: false, error: response.error };
+    }
+  };
+
   return {
     visit,
     handleChange,
     insertNewVisit,
     updateOldvisit,
     updateVisit: setVisit,
+    removeVisit,
   };
 };
