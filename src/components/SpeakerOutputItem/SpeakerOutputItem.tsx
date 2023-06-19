@@ -15,13 +15,17 @@ export const SpeakerOutputItem = ({ date, congregation, id }: Props) => {
   const { removeOutput } = useOutput();
   const dateToUse = useFormatDate(date);
 
+  const today = new Date();
+  const formattedDate = new Date(date);
+  const isCompleted = formattedDate < today;
+
   const handleClickDelete = async () => {
     const response = await removeOutput(id);
     if (response.success) document.location.reload();
   };
 
   return (
-    <li className="SpeakerOutputItem">
+    <li className={`SpeakerOutputItem ${isCompleted && "completed"}`}>
       <div className="info">
         <CardInfoItem type="date" data={dateToUse} />
         <CardInfoItem type="congregation" data={congregation} />
