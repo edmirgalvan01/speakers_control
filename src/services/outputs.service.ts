@@ -14,3 +14,8 @@ export const getOutputsBySpeakerId = async (speakerId: number) => {
 
   return { data, error };
 };
+
+export const deleteOutput = async (id: number) => {
+  const { data, error } = await supabase.from("outputs").delete().eq("id", id);
+  return { data, error };
+};

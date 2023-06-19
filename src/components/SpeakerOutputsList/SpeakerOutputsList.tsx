@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useGetOutputsBySpeakerId } from "../../hooks/useGetOutputsBySpeakerId";
 import { SpeakerOutputItem } from "../SpeakerOutputItem/SpeakerOutputItem";
 import "./SpeakerOutputsList.css";
@@ -18,6 +20,7 @@ export const SpeakerOutputsList = ({ speakerId }: Props) => {
             {outputs.map((output) => (
               <SpeakerOutputItem
                 key={output.id}
+                id={output?.id!}
                 date={output.output_date}
                 congregation={output.congregation}
               />
