@@ -1,7 +1,6 @@
 .speakerPage--buttons,
 .SpeakerOutputsList,
-.SpeakerOutputsList > ul,
-.SpeakerOutputsList > ul > li {
+.SpeakerOutputsList > ul {
   display: flex;
   flex-direction: column;
   gap: 10px;

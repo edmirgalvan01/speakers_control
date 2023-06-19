@@ -1,6 +1,5 @@
 .SpeakerSpeechesList,
-.SpeakerSpeechesList > ul,
-.SpeakerSpeechesList > ul > li {
+.SpeakerSpeechesList > ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
