@@ -6,6 +6,15 @@ export const getVisits = async () => {
   return { data, error };
 };
 
+export const getOrderVisits = async (ascending: boolean) => {
+  const { data, error } = await supabase
+    .from("visits")
+    .select()
+    .order("id", { ascending });
+
+  return { data, error };
+};
+
 export const insertVisit = async (visit: Visit) => {
   const { error } = await supabase.from("visits").insert(visit);
   return { error };

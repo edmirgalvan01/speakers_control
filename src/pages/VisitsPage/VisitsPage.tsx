@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { PrimaryButton } from "../../components/Buttons/Buttons";
 import { BackButton } from "../../components/BackButton/BackButton";
 import { VisitCard } from "../../components/VisitCard/VisitCard";
-import { useVisits } from "../../hooks/useVisits";
+import { useGetOrderVisits } from "../../hooks/useGetOrderVisits";
 import "./VisitsPage.css";
 
 export const VisitsPage = () => {
   const navigate = useNavigate();
-  const { visits, error } = useVisits();
+  const { visits, error } = useGetOrderVisits(true);
 
   return (
     <section className="container-page visitsPage">
