@@ -20,8 +20,13 @@ export const VisitCard = ({
 }: Props) => {
   const navigate = useNavigate();
 
+  const formattedDate = new Date(date);
+  const today = new Date();
+
+  const isCompleted = today > formattedDate;
+
   return (
-    <div className="visitCard">
+    <div className={`visitCard ${isCompleted && "completed"}`}>
       <div className="visitCard--item">
         <BiMicrophone color="345996" size="20" />
         <strong>{speech}</strong>
